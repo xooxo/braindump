@@ -1,0 +1,37 @@
+; wskex.inf
+
+[Version]
+Signature   = "$Windows NT$"
+Provider    = %wskex%
+DriverVer   = 10/10/2011,1.0.0.1
+CatalogFile =
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDiskNames]
+1 = %Disk1%
+
+[SourceDiskFiles]
+wskex.sys = 1
+
+[DefaultInstall]
+OptionDesc = %description%
+CopyFiles  = @wskex.sys
+
+[DefaultInstall.Services]
+AddService = wskex, , wskex.Service
+
+[wskex.Service]
+DisplayName    = %wskex%
+Description    = %description%
+ServiceBinary  = %12%\wskex.sys
+ServiceType    = 2
+StartType      = 3 ; Start on demand only for testing
+ErrorControl   = 1
+
+[Strings]
+umint       = "wskex"
+Disk1       = "wskex"
+description = "wskex"
+
