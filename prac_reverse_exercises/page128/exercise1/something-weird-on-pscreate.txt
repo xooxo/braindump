@@ -1,0 +1,67 @@
+From https://github.com/Zer0Mem0ry/ntoskrnl/blob/master/Ps/create.c ; So it is not official:
+
+NTSTATUS
+PsCreateSystemThread(
+    __out PHANDLE ThreadHandle,
+    __in ULONG DesiredAccess,
+    __in_opt POBJECT_ATTRIBUTES ObjectAttributes,
+    __in_opt  HANDLE ProcessHandle,
+    __out_opt PCLIENT_ID ClientId,
+    __in PKSTART_ROUTINE StartRoutine,
+    __in_opt PVOID StartContext
+    )
+
+/*++
+Routine Description:
+    This routine creates and starts a system thread.
+Arguments:
+    ThreadHandle - Returns the handle for the new thread.
+    DesiredAccess - Supplies the desired access modes to the new thread.
+    ObjectAttributes - Supplies the object attributes of the new thread.
+    ProcessHandle - Supplies a handle to the process that the thread is being
+                    created within.  If this parameter is not specified, then
+                    the initial system process is used.
+    ClientId - Returns the CLIENT_ID of the new thread.
+    StartRoutine - Supplies the address of the system thread start routine.
+    StartContext - Supplies context for a system thread start routine.
+--*/
+
+{
+    NTSTATUS Status;
+    HANDLE SystemProcess;
+    PEPROCESS ProcessPointer;
+
+    PAGED_CODE();
+
+    ProcessPointer = NULL;
+
+    if (ARGUMENT_PRESENT (ProcessHandle)) {
+        SystemProcess = ProcessHandle;
+    } else {
+        SystemProcess = NULL;
+        ProcessPointer = PsInitialSystemProcess;
+    }
+
+    Status = PspCreateThread (ThreadHandle,
+                              DesiredAccess,
+                              ObjectAttributes,
+                              SystemProcess,
+                              ProcessPointer,
+                              ClientId,
+                              NULL,
+                              NULL,
+                              FALSE,
+                              StartRoutine,
+                              StartContext);
+
+    return Status;
+}
+
+In MSDN, for PsCreateSystemThread argument ProcessHandle, it states that:
+Specifies an open handle for the process in whose address space the thread is to be run. The caller's thread must have PROCESS_CREATE_THREAD access to this process.
+
+BUT THERE IS NO CONTROL WHATSOEVER ON CODE! IT IS JUST AN ASSUMPTION. It may be in PspCreateThread Also:
+This value should be NULL for a driver-created thread.
+I have to disassembly ntoskrnl to learn more and try non-NULL value for exercise!
+
+ 

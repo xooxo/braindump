@@ -1,0 +1,76 @@
+Function Name: PopCreatePowerThread
+	 --> Function Address: 0x140123b55L
+Function Name: MiZeroInParallel
+	 --> Function Address: 0x1401a330eL
+Function Name: DisplayBootBitmap
+	 --> Function Address: 0x1401b3124L
+Function Name: ?SmStWorkerThreadStartThread@?$SMKM_STORE@USM_TRAITS@@@@SAJPEAU1@P6AXPEAX@ZPEAPEAU_ETHREAD@@@Z
+	 --> Function Address: 0x14022390bL
+Function Name: SmKmStoreHelperStart
+	 --> Function Address: 0x14022fa2eL
+Function Name: ExRegisterBootDevice
+	 --> Function Address: 0x14023b89bL
+Function Name: PopFlushVolumes
+	 --> Function Address: 0x1403757e6L
+Function Name: ExpTimeRefreshWork
+	 --> Function Address: 0x1403854d1L
+Function Name: EtwpStartLogger
+	 --> Function Address: 0x14044293eL
+Function Name: NtGetMUIRegistryInfo
+	 --> Function Address: 0x14047a106L
+Function Name: NtMapCMFModule
+	 --> Function Address: 0x14047a738L
+Function Name: PopInitSystemSleeperThread
+	 --> Function Address: 0x1404c83f8L
+Function Name: NtInitializeRegistry
+	 --> Function Address: 0x1404da93dL
+Function Name: KiStartDpcThread
+	 --> Function Address: 0x1404e52e2L
+Function Name: CmpInitializeLazyWriters
+	 --> Function Address: 0x1404e5918L
+Function Name: IoCreateSystemThread
+	 --> Function Address: 0x140506c51L
+Function Name: PopFxCreateEmergencyWorkerThread
+	 --> Function Address: 0x140507e64L
+Function Name: CmpInitializeSystemHivesLoad
+	 --> Function Address: 0x1405092a0L
+Function Name: IopCreatePassiveInterruptRealtimeThreads
+	 --> Function Address: 0x140509958L
+Function Name: sub_14048D6B8
+	 --> Function Address: 0x14057966aL
+Function Name: PfTStart
+	 --> Function Address: 0x14059ce57L
+Function Name: IopStartApcHardError
+	 --> Function Address: 0x1405c5defL
+Function Name: MmStoreRegister
+	 --> Function Address: 0x1405f24a4L
+Function Name: sub_14063B308
+	 --> Function Address: 0x14063b742L
+Function Name: VfPendingInitPhase1
+	 --> Function Address: 0x14067d40dL
+Function Name: VfPoolInitPhase1
+	 --> Function Address: 0x140680ceaL
+Function Name: VfKeInitPhase1
+	 --> Function Address: 0x140684591L
+Function Name: SeRmInitPhase1
+	 --> Function Address: 0x1406f7b48L
+Function Name: MiInitSystem
+	 --> Function Address: 0x140706a1eL
+Function Name: PspInitPhase0
+	 --> Function Address: 0x14070cc7bL
+Function Name: CcInitializeCacheManager
+	 --> Function Address: 0x14070e1a0L
+Function Name: MiSectionInitialization
+	 --> Function Address: 0x14070f3eeL
+Function Name: ExpWorkerFactoryInitialization
+	 --> Function Address: 0x140710aafL
+Function Name: MiInitializeModifiedPageWriter
+	 --> Function Address: 0x140717df0L
+Function Name: FsRtlInitializeWorkerThread
+	 --> Function Address: 0x14071e6e2L
+Function Name: 
+	 --> Function Address: 0x140331178L
+Function Name: 
+	 --> Function Address: 0x1406c6060L
+Function Name: KiServiceTablesLocked
+	 --> Function Address: 0x1406f5e78L
