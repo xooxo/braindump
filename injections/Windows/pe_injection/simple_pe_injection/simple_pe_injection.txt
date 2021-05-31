@@ -1,0 +1,16 @@
+A way of injecting an entire portable executabe (PE) into another running process.
+
+High level process of the technique as used in this lab:
+    Parse the currently running image's PE headers and get its sizeOfImage
+    Allocate a block of memory (size of PE image retrieved in step 1) in the currently running process. Let's call it localImage
+    Copy the image of the current process into the newly allocated local memory
+    Allocate new memory block (size of PE image retrieved in step 1) in a remote process - the target process we want to inject the currently running PE into. Let's call it targetImage
+    Calculate delta between memory addresses localImage and targetImage
+    Patch the PE you're injecting or, in other words, relocate it/rebase it to targetImage. For more information about image relocations, see my other lab T1093: Process Hollowing and Portable Executable Relocations
+    Write the patched PE into targetImage memory location
+    Create remote thread and point it to InjectionEntryPoint function inside the PE
+    
+    
+    
+    
+https://www.codeproject.com/Articles/19685/Get-Process-Info-with-NtQueryInformationProcess
